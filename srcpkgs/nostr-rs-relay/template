@@ -1,0 +1,23 @@
+# Template file for 'nostr-rs-relay'
+pkgname=nostr-rs-relay
+version=0.8.9
+revision=1
+build_style=cargo
+hostmakedepends="pkg-config protobuf"
+makedepends="openssl-devel"
+short_desc="Nostr relay"
+maintainer="Petr Cizmar <xxb0322@xpc.ovh>"
+license="MIT"
+homepage="https://git.sr.ht/~gheartsfield/nostr-rs-relay"
+changelog="https://git.sr.ht/~gheartsfield/nostr-rs-relay/refs"
+distfiles="https://git.sr.ht/~gheartsfield/nostr-rs-relay/archive/${version}.tar.gz"
+checksum=a497340760fc99745fdb42c7ea04013d25bc57e50ca4749887129361866a98fa
+system_accounts="_nostrrsrelay"
+system_groups="_nostrrsrelay"
+make_dirs="/var/db/nostr-rs-relay/ 0750 _nostrrsrelay _nostrrsrelay"
+
+post_install() {
+	vlicense "LICENSE"
+	vconf config.toml nostr-rs-relay.toml
+	vsv nostr-rs-relay
+}
