@@ -1,17 +1,17 @@
 # Template file for 'puzzles'
 pkgname=puzzles
-version=20230123.1f72a1a
+version=20230505.63346a8
 revision=1
 build_style=cmake
 configure_args="-DNAME_PREFIX=puzzles-"
-hostmakedepends="pkg-config"
+hostmakedepends="pkg-config halibut perl ImageMagick"
 makedepends="gtk+3-devel"
 short_desc="Simon Tatham's Portable Puzzle Collection"
 maintainer="Leah Neukirchen <leah@vuxu.org>"
 license="MIT"
 homepage="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/"
-distfiles="https://git.tartarus.org/?p=simon/puzzles.git;a=snapshot;h=1f72a1a2ecc89ba789a0b665a5e39da5febe27d2;sf=tgz>${pkgname}-${version#*.}.tgz"
-checksum=2a372deda982aff951bda19cb49dcf7fc56c14b63a7969763d95f1ebbc238906
+distfiles="https://git.tartarus.org/?p=simon/puzzles.git;a=snapshot;h=63346a8ceac9ac1061e59af2a99ab1a44c851392;sf=tgz>${pkgname}-${version#*.}.tgz"
+checksum=77a7a06fa21a987cbc1475bc689b0374633a3fdbe6f76a66832b448697de5d40
 
 post_install() {
 	vlicense LICENCE LICENSE

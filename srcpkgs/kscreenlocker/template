@@ -1,6 +1,6 @@
 # Template file for 'kscreenlocker'
 pkgname=kscreenlocker
-version=5.27.1
+version=5.27.4
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF -DKF5_HOST_TOOLING=/usr/lib/cmake"
@@ -14,7 +14,7 @@ maintainer="John <me@johnnynator.dev>"
 license="GPL-2.0-or-later"
 homepage="https://invent.kde.org/plasma/kscreenlocker"
 distfiles="${KDE_SITE}/plasma/${version}/${pkgname}-${version}.tar.xz"
-checksum=4905789a45d51f721ff8e34b7452d58686a2133a16a536e4b78fde4801bf6d08
+checksum=a9da7f59b3fe35879adae4c67d1b2263085ee5c79004cd2bec46ce6901b97191
 
 kscreenlocker-devel_package() {
 	short_desc+=" - development"

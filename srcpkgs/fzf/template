@@ -1,6 +1,6 @@
 # Template file for 'fzf'
 pkgname=fzf
-version=0.38.0
+version=0.40.0
 revision=1
 build_style=go
 go_import_path="github.com/junegunn/fzf"
@@ -12,7 +12,7 @@ license="MIT"
 homepage="https://github.com/junegunn/fzf"
 changelog="https://raw.githubusercontent.com/junegunn/fzf/master/CHANGELOG.md"
 distfiles="https://github.com/junegunn/fzf/archive/refs/tags/${version}.tar.gz"
-checksum=75ad1bdb2ba40d5b4da083883e65a2887d66bd2d4dbfa29424cb3f09c37efaa7
+checksum=9597f297a6811d300f619fff5aadab8003adbcc1566199a43886d2ea09109a65
 
 post_install() {
 	cd ${wrksrc}
