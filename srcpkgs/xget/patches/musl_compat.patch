@@ -1,0 +1,28 @@
+--- a/xget.c
++++ b/xget.c
+@@ -374,7 +374,7 @@ int main (int argc, char **argv)
+     }
+ 
+     cfg.botNick = argv[1];
+-    cfg.pack = strtonum (argv[3], 1, UINT32_MAX, NULL);
++    cfg.pack = strtol (argv[3], NULL, 10);
+     if ( errno )
+ 	errx (EXIT_FAILURE, "invalid pack number: %s", argv[3]);
+ 
+@@ -402,7 +402,7 @@ int main (int argc, char **argv)
+     if ( (errnum = pthread_create (&display_thread, NULL, thread_progress, &cfg)) )
+     {
+ 	irc_destroy_session (session);
+-	errc (EXIT_FAILURE, errnum, "pthread_create: ");
++	errx (EXIT_FAILURE, "pthread_create: ");
+     }
+ 
+     if ( irc_run (session) )
+@@ -418,6 +418,6 @@ int main (int argc, char **argv)
+ 
+     if ( (errnum = pthread_join (display_thread, NULL)) )
+     {
+-	errc (EXIT_FAILURE, errnum, "pthread_join: ");
++	errx (EXIT_FAILURE, "pthread_join: ");
+     }
+ }
